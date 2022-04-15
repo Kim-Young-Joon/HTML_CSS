@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Inline Tag</title>
+</head>
+<body>
+    <!-- Inline 태그 : 자신의 내용과 앞뒤 태그의 내용을 같은 라인에 출력하는 태그, 즉 자동 줄바꿈이 없음
+            (연속되는 태그가 좌우로 배치) 글자와 동일
+     xhtml, html5 공통 : a, span, strong, em, u, s, i, b, address, cite, img
+     -->
+    <a href="https://www.naver.com" target="_blank">Go Naver</a>
+        <!-- a 태그는 하이퍼링크를 걸어주는 태그이다.
+        href : 클릭시 이동할 링크 설정 / target : 링크를 여는 방법
+        _self : 현재 페이지(default), _blank : 새 탭 등의 target 에 대한 옵션들이 있다.
+        -->
+
+    <img src="https://pbs.twimg.com/media/FNrCFgqXwAAhUCA?format=jpg&name=medium" alt="이현중"/>
+        <!-- 화면에 이미지를 보여주기 위해서 사용하는 태그이다.
+        src : 이미지의 주소(위치)
+        alt : 이미지의 설명
+        -->
+
+    <span>구역을 나누는 역할</span>
+        <!-- Block 태그에서 div 와 유사한 느낌이다. 둘 다 동일하게 구역을 나누면서 CSS 와 함께 쓰이기는 하나
+        가장 큰 차이점은 div 는 Block 태그이고, span 은 Inline 태그이다.
+        -->
+
+    <strong>굵은 글씨, 주요 포인트</strong>
+    <b>굵은 글씨</b>
+        <!-- strong, b 태그 모두 굵은 글씨로 표현된다는 점에서는 동일하다. 하지만 다른 점은
+        b 태그의 경우는 단순 시각적 요소로만 사용된다는 것이고, 더 중요하다는 의미는 아니다.
+        반면 strong 태그의 경우는 '매우 중요, 긴급, 경고'의 의미를 지닌다.
+        -->
+
+    <i>italic</i>
+    <em>기울임 글씨</em>
+        <!-- i, em 태그 모두 기울임 글씨로 표현 된다는 점은 동일하다. 하지만 다른 점은
+        i 태그 : 기술 용어, 외국어 구절, 등장인물의 생각 등 특정 이유로 주위와 구분을 해야 할 때 사용
+        em 태그 : 주위 텍스트와 비교했을 때 해당 부분을 강조하고 싶은 경우에 사용
+        ** 단순 기울임 글씨체가 필요한 경우 : CSS 에서 font-style: italic;
+        -->
+
+    <u>밑줄 표시</u>
+    <s>취소선</s>
+
+    <address>
+        김영준컴퍼니(주)<br>
+        서울시 강남구 역삼동<br>
+        Tel : (02) 123-4567
+    </address>
+        <!-- 단어 뜻 그대로 주소를 쓰는 곳이라고 보면 된다. 약간 기울어 진 형태로 나온다.
+        body 내에 존재하는 address 요소는 해당 문서의 연락 정보를 나타내며, article 내에 존재하는 address 는
+        해당 글에 대한 연락 정보를 나타낸다. 대부분의 브라우저는 address 요소 위,아래에 약간의 공백을 자동으로 삽입하여
+        다른 텍스트와 구분하게 된다.
+        -->
+</body>
+</html>
