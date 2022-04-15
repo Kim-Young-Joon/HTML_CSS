@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head> <!-- 화면에 나타나지는 않고 body 를 꾸며주는 속성이 들어가는 곳 -->
+    <meta charset="UTF-8">
+    <title>HTML 태그의 이해 - Block tag</title>
+</head>
+<body>
+    <!--
+        Block 태그 : 자신의 내용과 앞뒤 태그의 내용을 다른 라인에 출력하는 태그, 즉 자동 줄바꿈을 한다는 의미
+            (연속되는 태그가 상하로 배치) 가로값이 기본 100%
+        xhtml, html5 공통 : div, ul, li, ol, dl, dl, dt, dd, p
+        html5 전용 : section, article, nav, menu, header, footer
+        ** class 와 ID : class 는 같은 이름을 여러군데 줄 수 있지만, id의 경우는 같은 html 문서 내에 하나만 존재해야 한다.
+    -->
+    <h1>Block 태그</h1>
+
+    <h2>헤딩 태그</h2>
+        <!-- 문서, 챕터의 제목과 같은 영역에서 사용한다. h1부터 h6까지 6가지 레벨이 존재하며 단순히 글자크기만의
+        용도로 사용되는 것이 아니라 검색엔진 스파이더가 웹 사이트의 헤딩 태그와 콘텐츠 사이의 일관성을 체크한다고 한다.
+        => 검색엔진 최적화(SEO : Search Engine Optimization) 관점에서 좋은 헤딩 태그 사용
+        -->
+
+    <p>p 태그는 하나의 문단을 만들 때 쓰인다.</p>
+        <!-- 본문을 나태내기 위해 단락으로 구분하는 태그이다. (Paragraph)
+        줄 바꿈을 하는 유사한 <br> 태그의 경우는 강제 줄바꿈이라고 생각하면 된다.
+        -->
+
+    <h3>ul 태그, li 태그</h3>
+    <ul type="square"> <!--type 값에 disc/circle/square 을 주면서 불릿의 모양을 변경할 수 있다. 보통 CSS 에서 처리함-->
+        <li>첫 번째 리스트</li>
+        <li>두 번째 리스트</li>
+    </ul>
+        <!-- 목록을 만드는 태그 : ul, ol, dl
+        ul(Unordered list) : 순서가 필요 없는 목록 / ol(Ordered list) : 순서가 있는 목록 /
+        dl(Definition list) : 용어를 설명하는 목록
+        ** 주의 : <li> 태그는 단독으로 사용할 수 없다 리스트의 포함되는 아이템을 정의할 때 사용 (ul, ol 내에서 항목간 구분을 위해 사용)
+        -->
+
+    <h3>ol 태그, li 태그</h3>
+    <ol start="5">      <!-- start 속성을 통해 시작 되는 번호를 지정할 수 있다. 이후는 순차적으로 +1씩 증가 -->
+                        <!-- type 속성을 통해 1, a, A, i, I 의 값을 줌으로써 속성을 변경할 수 있다. -->
+        <li>첫 번째 리스트</li>
+        <li>두 번째 리스트</li>
+    </ol>
+
+    <h3>dl 태그, dt 태그, dd 태그</h3>
+    <dl>
+        <dt>강남 지점</dt>
+        <dd>주소 : 서울특별시 서초구 서초대로</dd>
+        <dd>전화번호 : 010-1234-5678</dd>
+        <dt>마포 지점</dt>
+        <dd>주소 : 서울특별시 마포구 마포대로</dd>
+        <dd>전화번호 : 010-9999-1234</dd>
+    </dl>
+        <!-- dl(Definition list) : 용어를 설명하는 목록 / dt(Definition term) : 용어의 제목 /
+        dd(Definition description) : 용어 설명
+        -->
+
+    <div style="background-color:red">
+        구역을 나누는 div 태그
+    </div>
+        <!-- 공간 분할을 위한 태그이다. div 태그는 Block 태그이며, Inline 태그에서 공간 분할을 위한 태그로는 <span>이 있다.
+        div(Division) : 레이아웃을 나누는데 주로 쓰인다.
+        style 속성으로는 width, height, background-color 등이 있는데 주로 CSS 와 연동하여 쓰이게 된다.
+        -->
+
+    <section>
+        <h1>Section Tag의 이해</h1>
+        <p>이 구역은 Section tag 구역입니다.</p>
+    </section>
+        <!-- HTML 문서 내에서도 독립적인 섹션(section)을 정의할 때 사용한다. 보통 헤딩 태그를 포함하는 경우가 많다.
+        div, section, article 의 차이
+            div : 요소간 논리적 관계와는 상관없이 요소를 나눠야 할 필요가 있을 경우 사용
+            article : 문서 혹은 요소가 독립적으로 존재할 수 있을 때 사용
+            section : 논리적으로 관계 있는 문서 혹은 요소를 분리 할 때 사용
+            ** article 안에 section 이 들어가는 것이 자연스럽다
+        즉, 번역된 HTML 문서를 보는데에 있어서는 동일한 기능처럼 보이지만, 가독성을 높이는데에 있어서 적절한 태그를 활용하는 것이 좋다.
+        -->
+
+    <article>
+        <header>
+            <h3>날씨 정보</h3>
+            <h4>4월 15일</h4>
+            <p>기상청 제공</p>
+        </header>
+        <p>서울 : 맑음</p>
+        <p>대전 : 흐림</p>
+        <p>부산 : 비</p>
+    </article>
+        <!-- 해당 문서나 페이지, 사이트와는 완전히 독립적으로 구성할 수 있는 요소를 정의할 때 사용
+        주로 포럼(forum) 포스트, 블로그 포스트, 보도 기사, 논평 등에 사용된다.
+
+        header 태그 : 문서나 특정 섹션(section)의 헤더를 정의할 때 사용한다.
+        보통 도입부에 해당하는 콘텐츠나 네비게이션 링크 집합 등과 같은 정보를 포함 (하나 이상의 헤딩태그, 로고/아이콘 등)
+        -->
+    <nav>
+        <a href="https://www.naver.com">네이버</a><br>
+        <a href="https://www.google.com">구글</a>
+    </nav>
+        <!-- 다른 페이지 또는 현재 페이지의 다른 부분과 연결되는 네비게이션 링크들의 집합을 정의할 때 사용한다.
+        주로 메뉴, 목차, 인덱스 등에 사용된다.
+        -->
+    <menu>
+        <li>menu 1</li>
+        <li>menu 2</li>
+    </menu>
+        <!-- 메뉴를 생성하는 태그 -->
+
+    <footer>
+        <p>Copyright @ 2022 soongsil.univ.co., All right reserved.</p>
+    </footer>
+        <!-- 문서나 특정 섹션(section)의 푸터를 정의할 때 사용한다.
+        보통 footer 요소가 포함되어 있는 문서나 섹션에 대한 정보를 포함 (저자 정보, 저작권 정보, 연락처, 사이트 맵, Top 버튼, 연관 페이지 등)
+        -->
+</body>
+</html>
