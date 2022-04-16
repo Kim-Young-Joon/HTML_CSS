@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Table Tag</title>
+    <style>
+        table, th, td {border:1px solid #000;}
+    </style>
+</head>
+<body>
+    <!-- table 과 관련된 tag 들은 그 종류가 상당히 많은 것이 아니라 위치에 주의해야 한다. 위치 확인 필수!!
+    1.  table : 표를 만든다.
+        colgroup (column group) : 각 열의 넓이 값을 정해줌 (열의 개수와 동일하게 써야 한다.)
+        thead : 표 머리에 해당하는 부분
+        tfoot : 표 마지막에 해당하는 부분(ex 합계, 평균 ...)
+            thead 다음으로 선언하게 된다. => 장애인 차별 금지 : 장차법 웹 접근성 때문에 소스 상에서 thead 다음으로 언급
+        tbody : 표의 실질적인 데이터가 있는 부분
+
+    2.  th(table head) : 표의 제목 (기본 값은 Bold 체에, 가운데 정렬)
+        tr(table row) : 하나의 행 (기본 값은 보통 글씨체에, 왼쪽 정렬)
+        td(table data) : 하나의 열 (column, 표에서 가장 많은 열을 보고 써야한다, 기본 값은 보통 글씨체에, 왼쪽 정렬)
+
+        th 의 속성값으로 scope 를 줄 수 있다.
+            row : 세로줄을 같이 묶는다 (이 예제에서는 th1 - tb1 - tf1 를 묶는다는 의미)
+            col : 가로줄을 같이 묶는다 (이 예제에서는 tf1 - tf2 - tf3 - tf4 - tf5 를 묶는다는 의미)
+        td 의 속성으로 colspan, rowspan 을 줄 수 있다.
+            ** 여기서 주의 해야할 점은 colspan 은 좌우로 확장되기 때문에 크게 신경 쓸 필요가 없지만,
+            rowspan 은 위아래로 확장되는데 thead/tbody/tfoot 간에는 실행할 수 없다.
+        직접 노트에 그려보면서 이해할 필요가 있다.
+    -->
+    <table>
+        <colgroup>
+            <col width=""/>
+            <col width=""/>
+            <col width=""/>
+            <col width=""/>
+            <col width=""/>
+        </colgroup>
+        <thead>
+            <tr>
+                <th scope="row">th1</th>
+                <th>th2</th>
+                <th>th3</th>
+                <th>th4</th>
+                <th>th5</th>
+            </tr>
+        </thead>
+        <tfoot>
+        <tr>
+            <th scope="col">tf1</th>
+            <td>tf2</td>
+            <td>tf3</td>
+            <td>tf4</td>
+            <td>tf5</td>
+        </tr>
+        </tfoot>
+        <tbody>
+            <tr>
+                <th>tb1</th>
+                <td colspan="2" rowspan="2">tb2</td>
+                <td rowspan="2">tb4</td>
+                <td>tb5</td>
+            </tr>
+            <tr>
+                <th>tb1</th>
+                <td>tb5</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
