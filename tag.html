@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>태그 속성(문법 - 웹 표준)</title>
+</head>
+<body>
+    <h2>Block Tag 문법</h2>
+    div 태그 > 모든 태그 가능, div 도 가능
+        ** 예외 : li, dt, dd, table 안에 들어가는 태그 는 불가
+
+    ul(unordered list, 순서가 없는 리스트) 태그 > li 만 가능
+
+    ol(ordered list, 순서가 있는 리스트) 태그 > li 만 가능
+
+    li > div 와 동일, div 도 가능
+        ** li 안에는 바로 li 가 들어갈 수 없다
+
+    dl > dt, dd 만 가능
+        ** dt 는 한 번만 또는 없어도 무방, dd 는 필수! 여러번 가능
+    dt > inline 태그만 사용 가능, block 태그는 불가
+    dd > div 와 동일, div 도 가능
+
+    p > dt 와 동일(inline 태그만 사용가능, block 태그는 불가)
+
+    html5 전용 태그들(section, article, nav, menu, header, footer) > div 와 동일, div 도 가능
+        ** nav, menu, header, footer 는 각각 자신 안에 들어갈 수 없다.  ex) nav 안에 nav 불가
+
+
+    <h2>Inline Tag 문법</h2>
+    inline 태그 안에는 inline 태그만 가능하다.
+        ** a 태그 안에 a 태그는 불가(html5 이전)
+            html5 이후에는 a 태그 안에 div 와 동일하게 들어감.
+
+
+    <h2>Form Tag 문법</h2>
+    form, fieldset > div 와 동일, div 도 가능
+
+
+    <h2>Table Tag 문법</h2>
+    th > inline 태그만 가능
+    td > div 와 동일, div 도 가능
+
+</body>
+</html>
