@@ -5,40 +5,60 @@
     <title>Table Tag</title>
     <style>
         table, th, td {border:1px solid #000;}
+        table { width:800px; }
     </style>
 </head>
 <body>
     <!-- table 과 관련된 tag 들은 그 종류가 상당히 많은 것이 아니라 위치에 주의해야 한다. 위치 확인 필수!!
     1.  table : 표를 만든다.
         colgroup (column group) : 각 열의 넓이 값을 정해줌 (열의 개수와 동일하게 써야 한다.)
+            ** col 넓이값 지정시, 한 개의 col 에만 넓이값을 * 로 줄 수 있고, * 은 남은 넓이 값을 가진다.
         thead : 표 머리에 해당하는 부분
         tfoot : 표 마지막에 해당하는 부분(ex 합계, 평균 ...)
             thead 다음으로 선언하게 된다. => 장애인 차별 금지 : 장차법 웹 접근성 때문에 소스 상에서 thead 다음으로 언급
         tbody : 표의 실질적인 데이터가 있는 부분
 
-    2.  th(table head) : 표의 제목 (기본 값은 Bold 체에, 가운데 정렬)
-        tr(table row) : 하나의 행 (기본 값은 보통 글씨체에, 왼쪽 정렬)
-        td(table data) : 하나의 열 (column, 표에서 가장 많은 열을 보고 써야한다, 기본 값은 보통 글씨체에, 왼쪽 정렬)
+    2.  th(table head) : 표의 제목 (기본 값은 Bold 체에, 가운데 정렬), inline 태그처럼 가로로 나열
+        tr(table row) : 하나의 행 (기본 값은 보통 글씨체에, 왼쪽 정렬), block 태그처럼 세로로 나열
+        td(table data) : 하나의 열 (column, 표에서 가장 많은 열을 보고 써야한다, 기본 값은 보통 글씨체에, 왼쪽 정렬), inline 태그처럼 가로로 나열
 
-        th 의 속성값으로 scope 를 줄 수 있다.
-            row : 세로줄을 같이 묶는다 (이 예제에서는 th1 - tb1 - tf1 를 묶는다는 의미)
-            col : 가로줄을 같이 묶는다 (이 예제에서는 tf1 - tf2 - tf3 - tf4 - tf5 를 묶는다는 의미)
+        table 은 전체 넓이값에 비례하여 td, th 의 개수만큼 자동으로 간격을 가짐.
+        ex1) td 가 4개이면 각 25%
+        ex2) td 가 4개이고 3번째 글자가 길 경우, 3번째만 넓게 나타남
+        ** 글자에 상관없이 동일하게 만들고 싶다 => colgroup 태그를 활용하여 정확한 너비 지정
+
+        th 의 속성값으로 scope 를 줄 수 있다. (가로, 세로의 제목 표시)
+            row : 세로의 제목, 아래 목록의 제목 (이 예제에서는 th1 - tb1 - tf1 를 묶는다는 의미)
+            col : 가로의 제목, 오른쪽 목록의 제목(이 예제에서는 tf1 - tf2 - tf3 - tf4 - tf5 를 묶는다는 의미)
         td 의 속성으로 colspan, rowspan 을 줄 수 있다.
+            colspan : 세로줄과 세로줄을 합치는, 즉 가로로 합치게 된다.
+            rowspan : 가로줄과 가로줄을 합치는, 즉 세로로 합치게 된다.
             ** 여기서 주의 해야할 점은 colspan 은 좌우로 확장되기 때문에 크게 신경 쓸 필요가 없지만,
             rowspan 은 위아래로 확장되는데 thead/tbody/tfoot 간에는 실행할 수 없다.
         직접 노트에 그려보면서 이해할 필요가 있다.
+
+    3. table 안에 순서는 thead>tfoot>tbody 순으로 하며, thead, tfoot 은 필요시에만 작성
+       tbody는 필수(HTML5 에서는 필수가 아님)
+
+    4. 단위 : px(픽셀 : 디스플레이의 가장 작은 단위 - 상대적 단위), pt(츌판/인쇄 할 때의 가장 작은 단위 - 절대적 단위),
+            em(부모를 따라감, 부모의 100% = 1em), rem(html 의 100% = 1rem), %(백분율, 부모 또는 기준점 기준)
+            vw(view with, 화면의 가로 값에 따른 비율 100일 때 100%를 뜻함, 화면 넓이의 100% = 100vw),
+            vh(화면의 세로 값을 기준으로 한 값, 100일때 100%를 뜻함, 화면 높이의 100% = 100vh)
+            vw, vh 의 경우는 모바일로 만들 때 많이 사용
     -->
     <table>
-        <colgroup>
-            <col width=""/>
-            <col width=""/>
-            <col width=""/>
-            <col width=""/>
-            <col width=""/>
-        </colgroup>
+        <caption>분야, 분야의 상세, 기간, 검색어를 입력하거나 선택할 수 있는 표</caption>
+            <!-- th 의 내용을 포함하는 것 -->
+<!--        <colgroup>-->
+<!--            <col width="20%"/>-->
+<!--            <col width="*"/>-->
+<!--            <col width="10%"/>-->
+<!--            <col width="10%"/>-->
+<!--            <col width="20%"/>-->
+<!--        </colgroup>-->
         <thead>
             <tr>
-                <th scope="row">th1</th>
+                <th scope="row">th1 th1 th1 th1 th1</th>
                 <th>th2</th>
                 <th>th3</th>
                 <th>th4</th>
@@ -46,13 +66,13 @@
             </tr>
         </thead>
         <tfoot>
-        <tr>
-            <th scope="col">tf1</th>
-            <td>tf2</td>
-            <td>tf3</td>
-            <td>tf4</td>
-            <td>tf5</td>
-        </tr>
+            <tr>
+                <th scope="col">tf1</th>
+                <td>tf2</td>
+                <td>tf3</td>
+                <td>tf4</td>
+                <td>tf5</td>
+            </tr>
         </tfoot>
         <tbody>
             <tr>
