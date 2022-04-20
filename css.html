@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <style>
+            /* 꺽쇄 표시와 띄어쓰기의 차이점을 명확히 알아야 한다.*/
+            div {} /* 태그 선택 */
+            .a {} /* class 선택 */
+            #a {} /* id 선택 */
+            div.a {} /* 특정 태그의 class 선택 */
+            div div {} /* div 태그 안에 있는 div (띄어쓰기로 구분 한다.) */
+            div .a {} /* div 안에 있는 a 라는 클래스가 있는 태그 */
+            div + div {} /* div 태그 다음에 있는 div 태그만! */
+            .a + div {} /* a 클래스 다음에 오는 div 태그 */
+            .b>div {} /* b 라는 클래스 바로 아래 자식 div 태그 (자식태그 안에 있는 태그들은 제외) */
+            .b div:first-child {} /* 첫번째 자식 (첫번째 자식이 div 가 아닌 다른 태그가 존재한다면 찾을 수 없음, 즉 div 태그가 먼저 올 때만 해당 됨) */
+            .b div:last-child {} /* 마지막 자식 */
+            .b div:nth-child(3) {} /* 선택 자식 */
+            html {font-size: 10px;}
+            div { border: 0.1rem dashed #ff0000; border-left-width:4px; border-bottom-style:dotted; border-right-color:blue;
+            font-size: 20px; font-weight: 300; font-family:''; font-style:italic; color:blue;}
+            /*
+                선의 종류 3가지
+                실선 - solid
+                점선 - dotted
+                점신(긴) - dashed
+
+                border
+                border-width: 선의 굵기
+                border-style: 선의 종류
+                border-color: 선의 색상
+
+                border-top
+                border-bottom
+                border-left
+                border-right
+
+                ** 어느 한 쪽만 주기 싫다 하면, border 속성 맨 마지막에 기술해주면 된다. (border-right:0; 과 같이 쓴다.)
+
+                font
+                font-size: 글자의 크기 px
+                font-weight: bold,normal 과 같이 쓸 수도 있고, 100 ~ 900 으로 표현 가능하다. (100 : 매우 얇음/ 300 : 보통 / 점점 굵어짐)
+                font-style: italic, normal
+            */
+        </style>
+    </head>
+    <body>
+        <div class="b">
+            <div>1 동해물과 백두산</div>
+            <div>2</div>
+            <p>3</p>
+            <div>
+                <div>4</div>
+                <div>5</div>
+            </div>
+        </div>
+        <div class="a">6</div>
+        <p class="a">7</p>
+        <div id="a">8</div>
+
+    </body>
+</html>
