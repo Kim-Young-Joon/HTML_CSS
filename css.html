@@ -19,7 +19,19 @@
             .b div:nth-child(3) {} /* 선택 자식 */
             html {font-size: 10px;}
             div { border: 0.1rem dashed #ff0000; border-left-width:4px; border-bottom-style:dotted; border-right-color:blue;
-            font-size: 20px; font-weight: 300; font-family:''; font-style:italic; color:blue;}
+            font-size: 20px; font-weight: 300; font-family:''; font-style:italic; color:blue; text-align: center;
+            text-decoration:none; line-height: 2; letter-spacing: -1px; word-break: keep-all;}
+            u {text-decoration: line-through; word-break: keep-all;}
+            /*
+            text-align:left; right; center; // 정렬
+            text-decoration: underline; (밑줄) none; (아무것도 넣지 않겠다.) line-through; (취소선)
+            line-through; 밑줄
+            line-height: 1; 100%; 30px; // 단위는 다 가능하다고 보면 된다. - 글 사이의 간격을 뜻 함 (글자의 크기와 고려해야 한다. 기본적으로 120%를 가장 많이 쓴다., 행간)
+            letter-spacing: 1; 100%; 10px; // (단위 다 가능한데, 주로 px을 사용함. -1, 글자와 글자간의 간격, 자간)
+            word-break: break-all; (글자단위 줄바꿈) keep-all; (단어 단위 줄바꿈)
+            white-space: wrap; nowrap; (줄바꿈 안되게 막는 방식)
+            */
+
             /*
                 선의 종류 3가지
                 실선 - solid
@@ -47,11 +59,11 @@
     </head>
     <body>
         <div class="b">
-            <div>1 동해물과 백두산</div>
-            <div>2</div>
-            <p>3</p>
+            <p><u>1</u></p>
+            <div><s>2</s></div>
+            <div><del>3</del></div>
             <div>
-                <div>4</div>
+                <div>동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세.</div>
                 <div>5</div>
             </div>
         </div>
