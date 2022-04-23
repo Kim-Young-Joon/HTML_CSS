@@ -1,0 +1,61 @@
+/* 글자 문자 관련 style */
+{
+  font-size: 20px; /*글자의 크기*/
+  - 단위 : px, pt, em, rem, vw, vh, %
+  font-weight:normal;/*글자의 굵기*/
+  - bold(굵게), normal(기본), 100~800(순차적 굵게)
+  font-family: '궁서';/*글자체*/
+  - '궁서', '돋움', 'arial'
+  font-style:italic;/*기울임등의 글자형식*/
+  - italic(기울임), normal(기본형태)
+  color:#00f;/*글자의 색*/
+  - #6자리코드, 컬러단어, rgba(255,255,255,1)
+  text-align:center;/*글자, 문장의 정렬*/
+  - left, center, right
+  line-height:20px;/*문장간의 간격(행간)*/
+  letter-spacing:-1px;/*글자간의 간격(자간)*/
+  word-break:keep-all;/*문장의 줄바꿈 형식*/
+  - break-all(글자단위), keep-all(단어단위)
+  white-space:nowrap;/*줄바꿈 방지*/
+  - wrap(기본), nowrap(줄바꿈 방지)
+  text-decoration:line-through;/*밑줄 등 문장의 선*/
+  - none(밑줄, 취소선 삭제), underline(밑줄), line-through(취소선)
+
+
+  border(테두리) - 상하좌우 원하는대로 바꾸거나 줄 수 있다.
+  border-width:/*선의 굵기*/
+  border-style:/*선의 종류*/
+  - solid(실선), dotted(점선), dashed(긴점선)
+  border-color:/*선의 색상*/
+  border-top, bottom, left, right
+  border:1px solid #000;
+
+  width:; /*넓이*/
+  height:; /*높이*/
+
+  padding:/*간격*/
+  margin:/*간격*/
+  1번(4가지) - 상 우 하 좌 (10px 20px 30px 40px)
+  1번(3가지) - 상 좌우 하 (10px 20px 30px)
+  1번(2가지) - 상하 좌우 (10px 20px)
+  1번(1가지) - 상하좌우 (10px)
+
+  - 마진 + 마진 = 마진
+  - padding, margin 은 inline 태그들에서는 상, 하 값이 적용이 되지 않는다.
+
+  display:
+  - block /* inline 태그를 block 태그로 바꿔줌. */
+  - inline /* block 태그를 inline 태그로 바꿔줌. */
+  - inline-block /* inline 태그처럼 가로로 정렬되지만 상, 하 의 padding, margin 값이 적용됨. */
+  - table /* tr역할 */
+  - table-cell /* td, th 역할 */
+  - flex /**/
+  - flex 의 자식 > order:1; flex:1;
+
+
+  float:
+  - left, right, none
+
+  position:
+  - absolute, relative, static, fixed, sticky
+}
