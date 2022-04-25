@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Prac</title>
+        <style>
+            /*div { border: 2px solid #000;}*/
+            .a {border: 3px solid #f00; width:500px;}
+            .b {float:left; border: 3px dotted #0f0; width:400px; display: inline;}
+            .c {float:right; border: 3px dotted #0f0; width:300px; display: inline;}
+
+            .b div {float:left;}
+            .c div {float:left;}
+
+            .myDiv {border: 3px solid #000; width:500px;}
+            .myDiv-child1 {float:left; border: 3px solid #ff0; width:300px; display: inline;}
+            .myDiv-child2 {float:right; border: 3px solid #f0f; width:300px; display: inline;}
+
+            .abc {border: 3px solid #0f0; width: 300px;}
+            .bbb {border: 3px solid #00f; width: 300px;}
+            </style>
+    </head>
+    <body>
+        <div class="a">
+            <div class="b">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+            </div>
+            <div class="c">
+                <div>4</div>
+                <div>5</div>
+            </div>
+        </div>
+        <br/><br/><br/>
+
+        <div class="myDiv">
+            <div class="myDiv-child1">
+                <div>10</div>
+                <div>20</div>
+                <div>30</div>
+            </div>
+            <div class="myDiv-child2">
+                <div>40</div>
+                <div>50</div>
+            </div>
+        </div>
+        <br/><br/><br/><br/><br/><br/>
+        <div class="myDiv">
+            <span class="abc">100</span>
+            <span class="bbb">200</span>
+
+        </div>
+    </body>
+</html>
