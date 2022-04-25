@@ -30,6 +30,14 @@
   border-top, bottom, left, right
   border:1px solid #000;
 
+  background:
+  /*border 주는 것처럼 연속적으로 쓸 수 있다. 이미지와 색상을 모두 써주게 되면, 이미지가 들어가고 난 다음 빈 공간에 해당 색상으로 칠해진다.*/
+  background-image: (이미지 경로);
+  background-color: (색상);
+  background-position: (left, top 로도 표시 가능하고에 10px 10px 처럼 해당하는 위치에 넣고 싶은 숫자로도 표시 가능 / 배경 이미지 위치 지정);
+  background-repeat: no-repeat; // 반복하지 않겠다.
+  background-repeat: repeat-x; /* 가로로만 반복, y 로 쓰게 되면 세로로만 반복 , 그냥 repeat 만 쓰게 되면 가로,세로 모두 반복 / 거의 잘 사용하지 않음*/
+
   width:; /*넓이*/
   height:; /*높이*/
 
@@ -56,6 +64,50 @@
   float:
   - left, right, none
 
+  /*
+    float를 clear 하는 방법
+    1. float
+    2. inline-block
+    3. overflow : hidden
+    4. float의 부모의 after 를 이용
+      > content:''; clear:both; display:block; 
+  */
+
+
   position:
   - absolute, relative, static, fixed, sticky
+  /*
+    - body 기준
+    - 기준점
+    absolute : 기준점을 기준으로 절대 위치
+    relative : 현재 자신의 위치 기준
+    fixed : 화면을 기준 (아무리 화면을 줄여도 정해놓은 기준에 고정)
+    sticky : pc에서는 사용하지 않고 mobile 에서 사용
+    static : 초기화
+
+    네가지가 따라다님 (기본적으로는 두개씩 묶어서 씀, top bottom / right left 같이 사용 x)
+    
+    top - 위
+    left - 왼쪽
+    right - 오른쪽
+    bottom - 아래
+
+    z-index : 입체 순서 - 높은 값을 가질수록 위로 올라오게 된다. 단위 없이 숫자로만 씀 (0 ~ )
+            기본은 0이다. z-index 안써주게 되면 맨 마지막에 작성한 것이 위로 올라오게 된다.
+            값을 넣을 때 주의해야 함 : 수정할 때 중간에 넣어야 하는 경우가 생길 수 있기 때문이다.
+
+    overflow: 내 영역을 빠져 나간 것들을 어떻게 처리할 것인가
+    - hidden : 숨김
+    - auto : 스크롤을 이용해서 볼 수 있게 하지만, 넘칠때만 스크롤이 나온다.
+    - scroll : 스크롤을 이용해서 볼 수 있게 한다. 넘치지 않는 경우에도 스크롤이 생긴다. 사용빈도는 적음
+
+    가상 태그
+    : after
+    : before
+    ex) li:before {content:'-';} -> 이렇게 넣어주게 되면 li 태그 안에 있는 내용들 전에 - 이 들어가게 된다.
+  */
+
+   
+
+
 }
