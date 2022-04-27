@@ -2,16 +2,18 @@
 <html>
     <head>
         <title>금천구청</title>
+        <meta charset = "utf-8">
         <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/layout.css">
         <style>
-            .wrap {width: 100%;}
-            .header {height: 370px; background: url(img/main_visual_bg.jpg) 50% 0 no-repeat;}
-            .menu {height: 60px; background: #ff902d;}
-            .menu ul {width: 1200px; margin: 0 auto;}
-            .menu ul:after {content:''; display: block; clear:both;}
-            .menu ul li {float:left; width: 25%; padding:4px 0 0;}
-            .menu ul li a {display: block; height: 56px; text-align: center; line-height: 56px; color: #fff; font-size: 22px; font-weight: bold;}
-            .menu ul li a:hover {background: #fff; color: #ff902d;}
+            .tb {width: 1200px; margin: 30px auto 0;}
+            .tb table { width: 100%; border-top: 1px solid #ddd;}
+            th, td {border-bottom: 1px solid #ddd; padding: 20px 0; color: #424242;}
+            td {padding-left: 20px;}
+            th {background: #f4fcff;}
+            .blue,
+            td span {color: #00387a;}
+            td span {font-weight: bold;}
         </style>
     </head>
     <body>
@@ -25,12 +27,46 @@
             </div>
             <div class="menu">
                 <ul>
-                    <li><a href="#">신청안내</a></li>
+                    <li class="active"><a href="#">신청안내</a></li>
                     <li><a href="#">신청기간 및 방법</a></li>
                     <li><a href="#">신청하기</a></li>
                     <li><a href="#">신청내역 확인</a></li>
                 </ul>
             </div>
         </div>
+
+        <div class="tb">
+            <table>
+                <caption>재난지원금에 대한 지원대상, 지급금액, 지급일을 제공하는 표</caption>
+                <colgroup>
+                    <col width="200px"/>
+                    <col width="*"/>
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th scope="col">지원대상</th>
+                        <td>
+                            <p>
+                                <span> 2022.2.25. 기준 </span>
+                                금천구 주민등록 주민 누구나
+                            </p>
+                            <p class="blue">
+                                ※등록외국인 중 체류자격 영주권(F5), 결혼이민자(F6)만 지원
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="col">지급금액</th>
+                        <td>1인당 <span>5만원</span> (개인별 계좌이체)</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">지급일</th>
+                        <td>신청일로부터 7일이내</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        
     </body>
 </html>

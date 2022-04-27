@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65cf136c-2189-4751-be82-e26cfb8938c1" name="Changes" comment="website imitation" />
+    <list default="true" id="65cf136c-2189-4751-be82-e26cfb8938c1" name="Changes" comment="initial commit">
+      <change afterPath="$PROJECT_DIR$/site/img/visual_img03.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css_detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/css_detail.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/css/layout.css" beforeDir="false" afterPath="$PROJECT_DIR$/site/css/layout.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/css/reset.css" beforeDir="false" afterPath="$PROJECT_DIR$/site/css/reset.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/site/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/site/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -142,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650893597110</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="initial commit">
+      <created>1650893874024</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1650893874024</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -168,7 +182,8 @@
     <MESSAGE value="css detail" />
     <MESSAGE value="setting" />
     <MESSAGE value="website imitation" />
-    <option name="LAST_COMMIT_MESSAGE" value="website imitation" />
+    <MESSAGE value="initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

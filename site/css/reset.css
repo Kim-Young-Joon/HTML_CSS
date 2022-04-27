@@ -3,3 +3,6 @@
 ul, ol, li {list-style: none;}
 u, em, i, s {font-style: normal; text-decoration: none;}
 a {text-decoration: none; color: #000;}
+legend,
+caption { font-size: 0; width: 0; height: 0; line-height: 0; overflow: hidden; position: fixed; top: -9999px;}
+table {border-collapse: collapse;}

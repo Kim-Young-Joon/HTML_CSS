@@ -1,0 +1,16 @@
+.wrap {width: 100%;}
+.header {height: 370px; background: url(../img/main_visual_bg.jpg) 50% 0 no-repeat;}
+.header:after {width: 392px; height: 312px; background: url(../img/visual_img03.png); content: '';
+    position: absolute; top: 30px; left: 50%; margin-left: -622px;}
+.header h1 {position: absolute; top: 20px; left: 20px; z-index: 1;}
+.header p {position: absolute; top: 140px; left: 50%; margin-left: -200px; z-index: 1;}
+.header p span {display: block; font-size: 24px; color: #424242; padding-bottom: 15px;}
+.header p strong {display: block; font-size: 42px; color: #282828;}
+.header p b {color: #0756b4;}
+.menu {height: 60px; background: #ff902d;}
+.menu ul {width: 1200px; margin: 0 auto;}
+.menu ul:after {content:''; display: block; clear:both;}
+.menu ul li {float:left; width: 25%; padding:4px 0 0;}
+.menu ul li a {display: block; height: 56px; text-align: center; line-height: 56px; color: #fff; font-size: 22px; font-weight: bold;}
+.menu ul li.active a,
+.menu ul li a:hover {background: #fff; color: #ff902d; border-radius: 20px 0 0;}
