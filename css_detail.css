@@ -50,6 +50,7 @@
 
   - 마진 + 마진 = 마진
   - padding, margin 은 inline 태그들에서는 상, 하 값이 적용이 되지 않는다.
+  - margin 은 - 값 적용이 가능하다.
 
   display:
   - block /* inline 태그를 block 태그로 바꿔줌. */
@@ -59,6 +60,7 @@
   - table-cell /* td, th 역할 */
   - flex /**/
   - flex 의 자식 > order:1; flex:1;
+  - none /*화면 상에서 숨김*/
 
 
   float:
@@ -105,9 +107,26 @@
     : after
     : before
     ex) li:before {content:'-';} -> 이렇게 넣어주게 되면 li 태그 안에 있는 내용들 전에 - 이 들어가게 된다.
+
+    일반적으로 사용하는 명칭
+      로고 메뉴 등의 상단 부분 - header
+      하단 로고 주소 등 부분 - footer
+      중간 영역 - container
+      상단 메뉴 - gnb (global navigation bar)
+      왼쪽 메뉴 - lnb, aside
+      오른쪽 따라다니는 메뉴 - quick
+      container 를 제외한 부분을 layout이라고 보통 말한다.
+    
+    :hover
+      xhtml 에서는 a 태그에만 사용가능
+      html5 와서는 일반 태그 모두 사용 가능
+    
+    a:link // 기본적인 형태 (href가 있는)
+    a:active // 클릭을 하고 있는 상태에서 어떠한 조건을 준다 (거의 사용하지 않는다.)
+    a:visited // 포털에서 많이 사용하는 방식으로, 클릭했던 링크는 표시되게 한다.
+    a:hover // 마우스가 올라갔을 때, 내려갔을 때
+    a:focus // 탭 키로 이동하여 포커스가 잡혔을 때
+
+      *** 웹접근성 연구소 ***
   */
-
-   
-
-
 }
