@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>javascript</title>
+    <style>
+        * {padding:0; margin:0;}
+        a {display: block; height:80px; background: #333; color: #fff; font-size: 20px; text-align: center; line-height: 80px;}
+        div {height: 300px; background: blue; color: #fff; font-size: 50px; text-align: center;}
+    </style>
+</head>
+<body>
+    <div id="btA">
+        <a href="#" id="bt0">버튼1</a>
+        <a href="#" id="bt1">버튼2</a>
+        <a href="#" id="bt2">버튼3</a>
+    </div>
+        <!-- 태그에 onmouseover="hidden();" 과 같이 바로 이벤트를 명시해서 줄 수 있다. -->
+    <div id="contA">
+        <div id="contents0">컨텐츠1</div>
+        <div id="contents1">컨텐츠2</div>
+        <div id="contents2">컨텐츠3</div>
+    </div>
+    
+    <script>
+        // JS의 선택자, 이벤트
+        /*
+        // 선택자 (DOM 객체)
+        // 아이디, 클래스, 태그 를 가장 많이 사용한다.
+        document.getElementById('bt'); // bt 라는 이름의 id 를 가진 것을 불러옴
+        document.getElementsByClassName('contents')[1]; // contents 라는 이름의 클래스의 첫번째 값을 가져오게 된다.
+        document.getElementsByTagName('div')[0]; // 첫번째 div 태그를 불러옴 
+
+        // 변수 (전역변수, 지역변수, 매개변수) - 문자는 '' 안에 쓰게 된다.
+        var a = document.getElementById('bt'); // 변수선언 변수명 = 변수명에 대입할 값
+        
+        // 함수 : 이벤트를 저장해두는 공간
+        function funcName(매개변수) {
+            // 실행할 내용
+        }
+        
+        // 이벤트
+        /*
+        onclick
+        onmouseover
+        onmouseout
+        onmouseleave
+        onkeydown
+        onkeyup
+        focus
+        hover
+        scroll
+        resize
+        */
+        
+        
+    </script>
+
+    <script>
+        
+        // var bt = document.getElementById('bt');
+        // var cont = document.getElementById('contents');
+
+        // bt.onmouseover = function() {
+        //     // cont.style.display = 'none'; 
+        //     hidden();
+        // }
+        // bt.onmouseout = function() {
+        //     // cont.style.display = 'block'; 
+        //     show();
+        // }
+
+        // function hidden() {
+        //     cont.style.display = 'none'; 
+        // }
+        // function show() {
+        //     cont.style.display = 'block'; 
+        // }
+
+        // for문 : 반복문 (i > j > k > q > n)
+        var button = document.getElementById('btA').getElementsByTagName('a');
+        // var button = document.getElementById('btA').children;
+        for(i = 0; i < button.length; i++) {
+            button[i].onclick = function() {
+                for(j = 0; j < button.length; j++) {
+                    document.getElementById('contA').getElementsByTagName('div')[j].style.display='none';
+                }
+                var num = this.id.substring(2);
+                // var num = this.id.indexOf();
+                document.getElementById('contA').getElementsByTagName('div')[num].style.display='block';
+            }
+        }
+
+        // ~~~~.style.background = '';
+        // 클릭했을 때, 색이 변경되게
+
+
+        // if문
+
+    </script>
+
+    <script>
+        /*var num = 5; // 확인하기 위해서는 경고창(alert()), 에러 메세지(console.log())를 활용해서 출력한다.
+            num2 = 6;
+            num3 = num + num2; // 11
+            num4 = num+ num3; // 16
+        alert(num);
+        console.log(num);
+        */
+    </script>
+</body>
+</html>
