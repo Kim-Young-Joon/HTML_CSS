@@ -11,15 +11,15 @@
 </head>
 <body>
     <div id="btA">
-        <a href="#" id="bt0">버튼1</a>
-        <a href="#" id="bt1">버튼2</a>
-        <a href="#" id="bt2">버튼3</a>
+        <a href="#">버튼1</a>
+        <a href="#">버튼2</a>
+        <a href="#">버튼3</a>
     </div>
         <!-- 태그에 onmouseover="hidden();" 과 같이 바로 이벤트를 명시해서 줄 수 있다. -->
     <div id="contA">
-        <div id="contents0">컨텐츠1</div>
-        <div id="contents1">컨텐츠2</div>
-        <div id="contents2">컨텐츠3</div>
+        <div>컨텐츠1</div>
+        <div>컨텐츠2</div>
+        <div>컨텐츠3</div>
     </div>
     
     <script>
@@ -58,8 +58,8 @@
 
     <script>
         
-        // var bt = document.getElementById('bt');
-        // var cont = document.getElementById('contents');
+        var bt = document.getElementById('bt');
+        var cont = document.getElementById('contents');
 
         // bt.onmouseover = function() {
         //     // cont.style.display = 'none'; 
@@ -70,30 +70,34 @@
         //     show();
         // }
 
-        // function hidden() {
-        //     cont.style.display = 'none'; 
-        // }
-        // function show() {
-        //     cont.style.display = 'block'; 
-        // }
+        function hidden() {
+            cont.style.display = 'none'; 
+        }
+        function show() {
+            cont.style.display = 'block'; 
+        }
 
         // for문 : 반복문 (i > j > k > q > n)
-        var button = document.getElementById('btA').getElementsByTagName('a');
+        var button = document.getElementById('btA').children;
         // var button = document.getElementById('btA').children;
         for(i = 0; i < button.length; i++) {
+            button[i].a = i;
+            /*
+                button[0].a = 0;
+                button[1].a = 1;
+                button[2].a = 2;
+            */
             button[i].onclick = function() {
                 for(j = 0; j < button.length; j++) {
-                    document.getElementById('contA').getElementsByTagName('div')[j].style.display='none';
+                    document.getElementById('contA').children[j].style.display='none';
                 }
-                var num = this.id.substring(2);
+                // var num = this.id.substring(2);
                 // var num = this.id.indexOf();
-                document.getElementById('contA').getElementsByTagName('div')[num].style.display='block';
+                document.getElementById('contA').childeren[this.a].style.display='block';
             }
         }
 
-        // ~~~~.style.background = '';
-        // 클릭했을 때, 색이 변경되게
-
+        
 
         // if문
 

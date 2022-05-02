@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>javascript</title>
+    <style>
+        *       { padding:0; margin:0; }
+        a       { display:block; height:80px; background:#333; color:#fff; font-size:20px; text-align:center; line-height:80px; }
+        div     { background:blue; color:#fff; font-size:50px; text-align:center; line-height:300px; }
+        #btA>div, #btB>div { display:none; height:300px;}
+    </style>
+</head>
+<body>
+    <div id="btA">
+        <a href="#">버튼1</a>
+        <div>컨텐츠1</div>
+        <a href="#">버튼2</a>
+        <div>컨텐츠2</div>
+        <a href="#">버튼3</a>
+        <div>컨텐츠3</div>
+    </div>
+
+    <div id="btB">
+        <a href="#">버튼1</a>
+        <div>컨텐츠1</div>
+        <a href="#">버튼2</a>
+        <div>컨텐츠2</div>
+        <a href="#">버튼3</a>
+        <div>컨텐츠3</div>
+    </div>
+    
+    <script>
+        // 속성과 속성값을 추가 > setAttribute
+        // 속성의 값을 가져옴 > getAttribute
+        // 속성을 삭제 > removeAttribute
+
+        document.getElementById('btA').setAttribute('class', 'aa');
+        var att = document.getElementById('btA').getAttribute('class');
+        // alert(att);
+        document.getElementById('btA').removeAttribute('class');
+
+        function qna(obj, obj2) {
+            var btA = document.getElementById(obj);
+            var button = btA.getElementsByTagName('a');
+            for(i = 0; i < button.length; i++) {
+                button[i].a = i;
+                button[i].onclick = function() {
+                    var clicker = btA.getElementsByTagName(obj2)[this.a];
+
+                    if(clicker.style.display == 'block') {
+                        clicker.style.display='none';
+                        this.style.background = '#333';
+                    } else {
+                        clicker.style.display='block';
+                        this.style.background = 'red';
+                    }
+                };
+            };
+        };
+
+        qna('btA', 'div'); // 실행문
+        qna('btB', 'div');
+        
+
+        
+    </script>
+</body>
+</html>

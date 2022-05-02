@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title> form </title>
+</head>
+<body>
+    
+    <form method="post" action="#" name="myform">
+        <input type="text" name="year" value="" />
+        <input type="text" name="month" value="" />
+        <a href="#">검색</a>
+    </form>
+
+    <script>
+        var date = new Date();          // 연, 월, 일, 요일, 시간
+        var year = date.getFullYear();  // 연도
+        var month = date.getMonth();    // 월
+        
+        var ddi = new Array('원숭이', '닭', '개', '돼지', '쥐', '소', '호랑이', '토끼', '용', '뱀', '말', '양');
+        var ddi2 = new Array('신', '유', '술', '해', '자', '축', '인', '묘', '진', '사', '오', '미');
+        var gap = new Array('경', '신', '임', '계', '갑', '을', '병', '정', '무', '기');
+
+        // alert(document.myform.getElementsByTagName('a')[0].getAttribute('href'));    // form 태그 안에 있는 name 값은 바로 이름으로 쓸 수 있다.
+        
+        document.myform.getElementsByTagName('a')[0].onclick = function() {
+            var myyear = document.myform.year.value;
+            // alert(ddi[myyear%12]);
+            // alert(year - myyear + 1);
+            alert(gap[myyear%10] + ddi2[myyear%12]);
+        };
+
+        
+
+
+        
+    </script>
+
+</body>
+</html>

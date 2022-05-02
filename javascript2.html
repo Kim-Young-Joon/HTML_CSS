@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>javascript</title>
+    <style>
+        * {padding:0; margin:0;}
+        a {display: block; height:80px; background: #333; color: #fff; font-size: 20px; text-align: center; line-height: 80px;}
+        div {height: 300px; background: blue; color: #fff; font-size: 50px; text-align: center;}
+        #btA>div {display: none;}
+    </style>
+</head>
+<body>
+    <div id="btA">
+        <a href="#">버튼1</a>
+        <div>컨텐츠1</div>
+        <a href="#">버튼2</a>
+        <div>컨텐츠2</div>
+        <a href="#">버튼3</a>
+        <div>컨텐츠3</div>
+    </div>
+    
+    <script>
+        var button = document.getElementById('btA').getElementsByTagName('a');
+        for(i = 0; i < button.length; i++) {
+            button[i].a = i;
+            
+            button[i].onclick = function() {
+                var clicker = document.getElementById('btA').getElementsByTagName('div')[this.a];
+
+                if(clicker.style.display == 'block') {
+                    clicker.style.display='none';
+                    this.style.background = '#333';
+                } else {
+                    clicker.style.display='block';
+                    this.style.background = 'red';
+                }
+            };
+        };
+
+        
+
+        // if문
+        /*
+            === 문자인지 숫자인지에 대한 타입도 같다
+            !== 문자인지 숫자인지에 대한 타입도 다르다
+            == 같다 (타입 비교하지 않고 1 == '1' 은 참으로 나오게 된다.)
+        */
+    </script>
+</body>
+</html>
