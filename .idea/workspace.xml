@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65cf136c-2189-4751-be82-e26cfb8938c1" name="Changes" comment="javascript basic" />
+    <list default="true" id="65cf136c-2189-4751-be82-e26cfb8938c1" name="Changes" comment="javascript prac">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -191,7 +193,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651417118187</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="javascript prac">
+      <created>1651501073208</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1651501073208</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -221,7 +230,8 @@
     <MESSAGE value="website imitation" />
     <MESSAGE value="javascript start" />
     <MESSAGE value="javascript basic" />
-    <option name="LAST_COMMIT_MESSAGE" value="javascript basic" />
+    <MESSAGE value="javascript prac" />
+    <option name="LAST_COMMIT_MESSAGE" value="javascript prac" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

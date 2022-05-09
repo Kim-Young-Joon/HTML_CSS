@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>계산기</title>
+</head>
+<body>
+    <form method="post" action="#" name="myform">
+        <input type="text" name="cal1" value=""/>
+        <input type="text" name="cal2" value=""/>
+        <input type="text" name="cal3" value=""/>
+        <a href="#">계산</a>
+    </form>
+
+    <script>
+        var bt = document.myform.getElementsByTagName('a')[0];
+        
+        bt.onclick = function() {
+            var num1 = document.myform.cal1.value;
+            var operator = document.myform.cal2.value;
+            var num2 = document.myform.cal3.value;
+            var result;
+
+            num1 = Number(num1);
+            num2 = Number(num2);
+            if(operator == '+') {
+                result = num1 + num2;
+            } else if(operator == '-') {
+                result = num1 - num2;
+            } else if(operator == '*') {
+                result = num1 * num2;
+            } else if(operator == '/') {
+                result = num1 / num2;
+            } else {
+                result = '잘못된 연산자 입력';
+            }
+            alert(result);
+        }
+            
+
+
+    </script>
+</body>
+</html>

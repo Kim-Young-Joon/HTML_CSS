@@ -3,6 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title> form </title>
+    <style>
+        * {padding: 0; margin: 0;}
+        .myTable {width: 80%; margin: 0 auto;}
+        .myTable table {width:100%; border: 1px solid #333; border-collapse: collapse;}
+        .myTable table th,
+        .myTable table td {border: 1px solid #333; padding: 10px; text-align: center; font-size: 20px;}
+        .myTable table th {background: #ddd;}
+    </style>
 </head>
 <body>
     
@@ -11,6 +19,40 @@
         <input type="text" name="month" value="" />
         <a href="#">검색</a>
     </form>
+
+    <div class="myTable">
+        <table>
+            <tbody>
+                <tr>
+                    <th scope="row">현재 나이</th>
+                    <td id="oldbirth"></td>
+                    <th scope="row">만 나이</th>
+                    <td id="birth"></td>
+                </tr>
+                <tr>
+                    <th scope="row">태어난 해</th>
+                    <td id="gap"></td>
+                    <th scope="row">띠</th>
+                    <td id="ddi"></td>
+                </tr>
+                <tr>
+                    <th scope="row" colspan="2">초등학교 졸업년도</th>
+                    <td id="eleGraduation" colspan="2"></td>
+                </tr>
+                <tr>
+                    <th scope="row" colspan="2">중학교 졸업년도</th>
+                    <td id="midGraduation" colspan="2"></td>
+                </tr>
+                <tr>
+                    <th scope="row" colspan="2">고등학교 졸업년도</th>
+                    <td id="highGraduation" colspan="2"></td>
+                </tr>
+                <tr>
+                    <td id="adult" colspan="4"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
     <script>
         var date = new Date();          // 연, 월, 일, 요일, 시간
@@ -25,15 +67,63 @@
         
         document.myform.getElementsByTagName('a')[0].onclick = function() {
             var myyear = document.myform.year.value;
-            // alert(ddi[myyear%12]);
-            // alert(year - myyear + 1);
+            var mymonth = document.myform.month.value;
+            var birth, oldbirth;
+
+            oldbirth = year - myyear + 1;
+            if(mymonth >= month) {
+                birth = year - myyear - 1;
+            } else {
+                birth = year - myyear;
+            }
+
+            if(myyear == '' || myyear < 1000 || myyear >= year) {
+                alert('입력값이 잘못되었습니다. 올바른 4자리 연도를 입력해주세요.');
+            } else {
+                if(mymonth == '') {
+                    alert('월을 입력해 주세요.')
+                } else if(mymonth > 0 && mymonth <= 12) {
+                    if(birth > 18) {
+                        document.getElementById('adult').innerHTML = '성인입니다.';
+                    } else {
+                        document.getElementById('adult').innerHTML = '미성년자입니다.';
+                    }
+                    document.getElementById('oldbirth').innerHTML = oldbirth + '세';      // 나이
+                    document.getElementById('birth').innerHTML = birth + '세';       // 만 나이
+                    document.getElementById('gap').innerHTML = (gap[myyear%10] + ddi2[myyear%12]) + '년'; // 태어난 년도
+                    document.getElementById('ddi').innerHTML = ddi[myyear%12] + '띠';  // 띠
+                    
+
+                    document.getElementById('eleGraduation').innerHTML = Number(myyear) + 13;
+                    document.getElementById('midGraduation').innerHTML = Number(myyear) + 16;
+                    document.getElementById('highGraduation').innerHTML = Number(myyear) + 19;
+
+                } else {
+                    alert('1월부터 12월 사이의 숫자를 입력해주세요.')
+                }
+            }
+            
+            /*
+                고등학교 입학일 : 태어난 년도 + 16
+                고등학교 졸업일 : 태어난 년도 + 19 (2월에 졸업)
+            */
+
+            /*
+            document.getElementById('oldbirth').innerHTML = oldbirth;      // 나이
+            document.getElementById('birth').innerHTML = birth;       // 만 나이
+
+            document.getElementById('gap').innerHTML = (gap[myyear%10] + ddi2[myyear%12]); // 태어난 년도
+            document.getElementById('ddi').innerHTML = ddi[myyear%12];  // 띠
+
+            alert('내 나이는 ' + oldbirth + ' 만 나이는 ' + birth + '입니다. 제가 태어난 해는 '
+            + (gap[myyear%10] + ddi2[myyear%12]) + '년 이고, 띠는 ' + ddi[myyear%12] + '입니다.');
+
+            alert(ddi[myyear%12]);
+            alert(year - myyear + 1);
             alert(gap[myyear%10] + ddi2[myyear%12]);
+            */
+
         };
-
-        
-
-
-        
     </script>
 
 </body>
