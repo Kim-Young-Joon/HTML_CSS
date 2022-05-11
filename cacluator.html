@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>calculator</title>
+    <style>
+        * {padding: 0; margin: 0;}
+        .tb {width: 400px; margin: 50px auto;}
+        .tb table {width: 100%; border-collapse: collapse;}
+        .tb table td {border: 2px solid #333;}
+        .tb table td a {display: block; height: 80px; font-size: 26px; color: #333;
+            text-decoration: none; line-height: 80px; text-align: center;}
+        .tb table td a:hover {background: #666;}
+        .tb table td div {height: 100px; line-height: 100px; font-size: 30px; color: #fff; background: #333; text-align: right;}
+        .tb table td div.operator {text-align: center;}
+    </style>
+</head>
+<body>
+    <div class="tb">
+        <table>
+            <colgroup>
+                <col width="25%"/>
+                <col width="25%"/>
+                <col width="25%"/>
+                <col width="25%"/>
+            </colgroup>
+            <tbody>
+                <tr>
+                    <td colspan="3">
+                        <div id="calculator"></div>
+                    </td>
+                    <td>
+                        <div id="operator"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3"><a href="#" onclick="ac();">AC</a></td>
+                    <td><a href="#" onclick="opeWrite(this);">/</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#" onclick="numWrite(this);">7</a></td>
+                    <td><a href="#" onclick="numWrite(this);">8</a></td>
+                    <td><a href="#" onclick="numWrite(this);">9</a></td>
+                    <td><a href="#" onclick="opeWrite(this);">*</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#" onclick="numWrite(this);">4</a></td>
+                    <td><a href="#" onclick="numWrite(this);">5</a></td>
+                    <td><a href="#" onclick="numWrite(this);">6</a></td>
+                    <td><a href="#" onclick="opeWrite(this);">-</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#" onclick="numWrite(this);">1</a></td>
+                    <td><a href="#" onclick="numWrite(this);">2</a></td>
+                    <td><a href="#" onclick="numWrite(this);">3</a></td>
+                    <td><a href="#" onclick="opeWrite(this);">+</a></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><a href="#" onclick="numWrite(this);">0</a></td>
+                    <td><a href="#">.</a></td>
+                    <td><a href="#" onclick="end(); opeClear();">=</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        var a,b,c,d;
+        // a : 첫번째 값, b : 연산자, c : 두번째 값, d : 결과값
+        var $calculator = document.getElementById('calculator'),
+            $operator = document.getElementById('operator');
+
+        var $firstNum = false;
+
+        function operSel() {
+            if(b == '+') {
+                d = Number(a) + Number(c);
+            } else if(b == '-') {
+                d = Number(a) - Number(c);
+            } else if(b == '*') {
+                d = Number(a) * Number(c);
+            } else if(b == '/') {
+                d = Number(a) / Number(c);
+            }
+        };
+
+        function numWrite(obj) {
+            if($calculator.getAttribute('class') == 'start') {
+                $calculator.innerHTML += obj.innerHTML;
+            } else {
+                $calculator.innerHTML = '';
+                $calculator.innerHTML += obj.innerHTML;
+                $calculator.setAttribute('class', 'start');
+            }
+        };
+        
+        function opeWrite(obj) {
+            if($firstNum == false) {
+                $firstNum = $calculator.innerHTML;
+                $calculator.setAttribute('class', '');
+            } else {
+                if($calculator.getAttribute('class') == 'start') {
+                    end();
+                    $firstNum = d;
+                } else {
+                    $firstNum = $calculator.innerHTML;
+                }
+            }
+            $operator.innerHTML = obj.innerHTML;
+            b = obj.innerHTML;
+        };
+
+        function end() {
+            a = $firstNum;
+            c = $calculator.innerHTML;
+            operSel();
+            $calculator.innerHTML = d;
+            $calculator.setAttribute('class', '');
+        };
+
+        function ac() {
+            $calculator.innerHTML = '';
+            $calculator.setAttribute('class', '');
+            reset();
+        };
+
+        function reset() {
+            $firstNum = false;
+            opeClear();
+            a = ''; b = ''; c = ''; d = '';
+        }
+
+        function opeClear() {
+            $operator.innerHTML = '';
+        }
+    </script>
+</body>
+</html>
